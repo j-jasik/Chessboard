@@ -1,0 +1,23 @@
+h1{
+    color: dodgerblue;
+}
+
+.grid{
+    display: grid;
+    height: 270px;
+    width: 270px;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+}
+
+.box{
+    border: 2px black solid;
+}
+
+.white{
+    background-color: white;
+}
+
+.black{
+    background-color: black;
+}
