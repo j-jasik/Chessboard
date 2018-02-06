@@ -7,10 +7,9 @@ class BaseView(FlaskView):
     route_base = '/'
 
     def index(self):
-        board = chessBoard('black')
+        board = chessBoard('white','black')
         return render_template("index.html", **locals())
 
     @route('/change-color-board', methods=['post'])
     def change_color_board(self):
-        colors = ['red','green','blue']
-        return chessBoard(colors[random.randint(0,2)])
+        return chessBoard('black','white')
