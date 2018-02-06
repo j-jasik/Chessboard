@@ -14,7 +14,21 @@
                 {% endfor %}
             {% endfor %}
         </div>
-        <button>Swap</button>
+        <button id="swap">Swap</button>
+
+        <script>
+            $('#swap').click(function () {
+                    var inputs = {};
+                    var url = "/change-color-board";
+                    $.post(url, inputs, function (data) {
+                        // take the data, and update the chess board div
+{#                        $("#chessboard").html(data);#}
+                        //updateTable(data)
+                        console.log("I clicked it");
+                        console.log(data);
+                    });
+                });
+        </script>
 
     </body>
 </html>
