@@ -7,12 +7,8 @@
     </head>
     <body>
         <h1>Chessboard</h1>
-        <div class="grid">
-            {%  for row in board %}
-                {% for spot in row %}
-                    <div class="{{ spot['color'] }} {{ spot['class'] }}"></div>
-                {% endfor %}
-            {% endfor %}
+        <div id="board" class="grid">
+            {{ board | safe }}
         </div>
         <button id="swap">Swap</button>
 
@@ -22,10 +18,8 @@
                     var url = "/change-color-board";
                     $.post(url, inputs, function (data) {
                         // take the data, and update the chess board div
-{#                        $("#chessboard").html(data);#}
+                        $("#board").html(data);
                         //updateTable(data)
-                        console.log("I clicked it");
-                        console.log(data);
                     });
                 });
         </script>

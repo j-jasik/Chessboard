@@ -1,4 +1,6 @@
-def chessBoard():
+from flask import render_template
+
+def chessBoard(color):
     board = []
     for i in range(8):
         board.append([])
@@ -10,8 +12,8 @@ def chessBoard():
                 }
             else:
                 newDict = {
-                    "color": "black",
+                    "color": color,
                     "class": "box"
                 }
             board[i].append(newDict)
-    return board
+    return render_template("board.html", **locals())
