@@ -7,8 +7,15 @@
     <body>
         <h1>Chessboard</h1>
     <div class="grid">
-        <div class="white box">A</div>
-        <div class="black box">B</div>
+        {%  for i in range(8) %}
+            {% for j in range(8) %}
+                {% if (i % 2 == 0 and j % 2 == 0) or (i % 2 != 0 and j % 2 != 0) %}
+                    <div class="white box"></div>
+                {% else %}
+                    <div class="black box"></div>
+                {% endif %}
+            {% endfor %}
+        {% endfor %}
     </div>
     </body>
 </html>
