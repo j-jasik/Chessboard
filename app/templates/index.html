@@ -6,17 +6,14 @@
     </head>
     <body>
         <h1>Chessboard</h1>
-    <div class="grid">
-        {%  for i in range(8) %}
-            {% for j in range(8) %}
-                {% if (i % 2 == 0 and j % 2 == 0) or (i % 2 != 0 and j % 2 != 0) %}
-                    <div class="white box"></div>
-                {% else %}
-                    <div class="black box"></div>
-                {% endif %}
+        <div class="grid">
+            {%  for row in board %}
+                {% for spot in row %}
+                    <div class="{{ spot['color'] }} {{ spot['class'] }}"></div>
+                {% endfor %}
             {% endfor %}
-        {% endfor %}
-    </div>
+        </div>
+        <button>Swap</button>
     </body>
 </html>
 
