@@ -1,16 +1,15 @@
 from flask_classy import FlaskView, route
 from flask import render_template
+from controller import *
+import random
 
 class BaseView(FlaskView):
     route_base = '/'
 
     def index(self):
-        test = 3
-        list = ["Hello", "Goodbye"]
-        #return render_template('index.html', **locals())
+        board = chessBoard('white','black')
         return render_template("index.html", **locals())
 
-    @route('/update-xml')
-    def test(self):
-        #return render_template('index.html', **locals())
-        return "YAY"
+    @route('/change-color-board', methods=['post'])
+    def change_color_board(self):
+        return chessBoard('black','white')

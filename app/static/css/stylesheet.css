@@ -1,5 +1,11 @@
 h1{
     color: dodgerblue;
+    margin-left: 50px;
+}
+
+button{
+   margin: 15px;
+   margin-left: 115px;
 }
 
 .grid{
@@ -11,7 +17,7 @@ h1{
 }
 
 .box{
-    border: 2px black solid;
+    border: 1px black solid;
 }
 
 .white{
@@ -20,4 +26,16 @@ h1{
 
 .black{
     background-color: black;
+}
+
+.blue{
+    background-color: blue;
+}
+
+.red{
+    background-color: red;
+}
+
+.green{
+    background-color: green;
 }

@@ -1,21 +1,28 @@
 <!doctype html>
 <html>
     <head>
+        <script src="https://cdn4.bethel.edu/tinker/js/jquery-1.10.2.js" type="text/javascript"></script>
         <title>Chessboard</title>
         <link rel="stylesheet" type="text/css" href="/static/css/stylesheet.css"/>
     </head>
     <body>
         <h1>Chessboard</h1>
-    <div class="grid">
-        <div class="white box">A</div>
-        <div class="black box">B</div>
-    </div>
+        <div id="board" class="grid">
+            {{ board | safe }}
+        </div>
+        <button id="swap">Swap</button>
+
+        <script>
+            $('#swap').click(function () {
+                    var inputs = {};
+                    var url = "/change-color-board";
+                    $.post(url, inputs, function (data) {
+                        // take the data, and update the chess board div
+                        $("#board").html(data);
+                        //updateTable(data)
+                    });
+                });
+        </script>
+
     </body>
 </html>
-
-<!-- Jinja2 code example
-{{test}}
-{% for item in list %}
-    {{item}}
-{% endfor %}
--->
